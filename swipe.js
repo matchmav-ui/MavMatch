@@ -1,0 +1,1 @@
+// this is for the swiping function and matching people together. might be difficult. dont think about the swiping rn, just think about connecting two users and shit.
