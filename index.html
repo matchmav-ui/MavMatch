@@ -7,7 +7,7 @@
 </head>
 <body style="font-family: sans-serif; max-width: 400px; margin: 50px auto;">
 
-  <!-- TEMPORARY DEV TOOLBAR (Remove before final submission) -->
+  <!--TEMPORARY DEV TOOLBAR (remove before final submission) -->
   <div style="background: #eee; padding: 8px; margin-bottom: 20px; text-align: center; font-size: 12px;">
     <strong>Dev View Switcher:</strong><br>
     <button onclick="showSection('auth-section')">Auth</button>
@@ -15,7 +15,7 @@
     <button onclick="showSection('swipe-section')">Swipe</button>
   </div>
 
-  <!-- AUTH SECTION (Your Work) -->
+  <!-- AUTH SECTION (Code by Joshua Cana) -->
   <div id="auth-section">
     <h2>MavMatch Sign Up</h2>
     <input type="email" id="email" placeholder="student@mavs.uta.edu" style="width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box;" />
@@ -28,19 +28,19 @@
     <p id="statusMessage" style="margin-top: 15px; color: red;"></p>
   </div>
 
-  <!-- PROFILE SECTION (Teammate A) -->
+  <!-- PROFILE (for person A)-->
   <div id="profile-section" style="display: none;">
     <h2>Setup Your Profile</h2>
-    <!-- Teammate A writes profile HTML form here -->
+    <!-- write ya ui code here -->
   </div>
 
-  <!-- SWIPE SECTION (Teammate B) -->
+  <!-- SWIPE (for person B) -->
   <div id="swipe-section" style="display: none;">
     <h2>Find Matches</h2>
-    <!-- Teammate B writes swipe card UI here -->
+    <!-- write ya ui code here -->
   </div>
 
-  <!-- SCRIPT IMPORTS -->
+  <!-- this is where you actually CALL the scrips to do their jobs. Check out "auth.js" for example -->
   <script src="auth.js"></script>
   <script src="profile.js"></script>
   <script src="swipe.js"></script>
