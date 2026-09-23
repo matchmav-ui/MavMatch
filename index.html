@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MavMatch - Login</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body style="font-family: sans-serif; max-width: 400px; margin: 50px auto;">
+
+  <h2>MavMatch Sign Up</h2>
+
+  <input type="email" id="email" placeholder="student@mavs.uta.edu" style="width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box;" />
+  <input type="password" id="password" placeholder="Password" style="width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box;" />
+  
+  <button onclick="handleSignUp()" style="width: 100%; padding: 10px; background: #0064B1; color: white; border: none; cursor: pointer; box-sizing: border-box;">
+    Sign Up
+  </button>
+
+  <p id="statusMessage" style="margin-top: 15px; color: red;"></p>
+
+<script>
+    
+    const SUPABASE_URL = 'https://pbfbuyvoffkmqvomaysp.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_-8_38j-CyXG7HbGDFij_Fg_6S2pRrs5';
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    
+    async function handleSignUp() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const status = document.getElementById('statusMessage');
+
+      
+      if (!email.endsWith('@mavs.uta.edu') && !email.endsWith('@uta.edu')) {
+        status.style.color = 'red';
+        status.textContent = 'Please use an official UTA email (@mavs.uta.edu or @uta.edu)';
+        return;
+      }
+
+      
+      const { data, error } = await supabaseClient.auth.signUp({ email, password });
+
+      if (error) {
+        status.style.color = 'red';
+        status.textContent = error.message;
+      } else {
+        status.style.color = 'green';
+        status.textContent = 'Account created successfully!';
+        console.log('User signed up:', data);
+      }
+    }
+  </script>
+</body>
+</html>
